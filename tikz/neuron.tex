@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=8mm,circle},
+    normal arrow/.style={draw,-triangle 45,thick},
+    normal line/.style={draw,thick},
+    big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle}
+]
+\node[cnode=white] (sm) at (3,-3) {$f \circ \sum$};
+\node[] (y) at (5,-3) {$y$};
+\path[normal arrow] (sm) -- (y);
+\foreach \x in {1,...,5} {
+	\node[] (f-\x) at (0,-\x) {$x_\x$};
+	\coordinate[] (g\x) at (1,-\x) {};
+	\path[normal line] (f-\x) -- (g\x);
+	\path[normal arrow] (g\x) -- node [above,sloped] {$w_\x$} (sm);
+}
+\end{tikzpicture}

@@ -1,0 +1,32 @@
+	\hbox{}\hfill
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=8mm,circle},
+    normal arrow/.style={draw,-triangle 45,thick},
+    big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle}
+]
+	\node (m) at (0,0) {man};
+	\node (w) at (3,1) {woman};
+	\path[normal arrow] (m) -- (w);
+	\node (u) at (1,-1) {uncle};
+	\node (a) at (4,0) {aunt};
+	\path[normal arrow] (u) -- (a);
+	\node (k) at (0.5,-2.5) {king};
+	\node (q) at (3.5,-1.5) {queen};
+	\path[normal arrow] (k) -- (q);
+\end{tikzpicture}\hfill\vrule\hfill
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=8mm,circle},
+    normal arrow/.style={draw,-triangle 45,thick},
+    dashed arrow/.style={draw,-triangle 45,thick, dashed},
+    big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle}
+]
+	\node (ks) at (-0.5,0) {kings};
+	\node (qs) at (2.5,1) {queens};
+	\node (k) at (0.5,-2.5) {king};
+	\node (q) at (3.5,-1.5) {queen};
+	\path[normal arrow] (k) -- (q);
+	\path[dashed arrow] (k) -- (ks);
+	\path[dashed arrow] (q) -- (qs);
+\end{tikzpicture}\hfill\hbox{}

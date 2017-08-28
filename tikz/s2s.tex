@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=8mm,circle},
+    normal arrow/.style={draw,-triangle 45,thick},
+    normal line/.style={draw,thick},
+    big box/.style={draw, minimum width=8mm, minimum height=4mm, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle},
+    scale = 0.55
+]
+	\node[] (g1) at (3, -2) {A};
+	\node[] (g2) at (3 * 2, -2) {B};
+	\node[] (g3) at (3 * 3, -2) {C};
+	\node[] (g4) at (3 * 4, -2) {$<$EOS$>$};
+	\node[] (g5) at (3 * 5, -2) {W};
+	\node[] (g6) at (3 * 6, -2) {X};
+	\node[] (g7) at (3 * 7, -2) {Y};
+	\node[] (g8) at (3 * 8, -2) {Z};
+\foreach \x in {1,...,8} {
+	\node[big box] (b\x) at (3 * \x,0) {};
+	\path[normal arrow] (g\x) -- (b\x);
+	%\node[] (f-\x) at (0,-\x) {$x_\x$};
+	%\path[normal line] (f-\x) -- (g\x);
+	%\path[normal arrow] (g\x) -- node [above,sloped] {$w_\x$} (sm);
+}
+	\path[normal arrow] (b1) -- (b2);
+	\path[normal arrow] (b2) -- (b3);
+	\path[normal arrow] (b3) -- (b4);
+	\path[normal arrow] (b4) -- (b5);
+	\path[normal arrow] (b5) -- (b6);
+	\path[normal arrow] (b6) -- (b7);
+	\path[normal arrow] (b7) -- (b8);
+	\node[] (h4) at (3 * 4, 2) {W};
+	\node[] (h5) at (3 * 5, 2) {X};
+	\node[] (h6) at (3 * 6, 2) {Y};
+	\node[] (h7) at (3 * 7, 2) {Z};
+	\node[] (h8) at (3 * 8, 2) {$<$EOS$>$};
+	\path[normal arrow] (b4) -- (h4);
+	\path[normal arrow] (b5) -- (h5);
+	\path[normal arrow] (b6) -- (h6);
+	\path[normal arrow] (b7) -- (h7);
+	\path[normal arrow] (b8) -- (h8);
+\end{tikzpicture}

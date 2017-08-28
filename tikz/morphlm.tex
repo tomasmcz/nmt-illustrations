@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=3mm,circle},
+    normal arrow/.style={draw,-triangle 45,very thick},
+    big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
+    bigger box/.style={draw, minimum width=10mm, minimum height=24em, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle}
+]
+\node[big box] (i) at (0, -1.5) {};
+\node[big box] (i2) at (0, -7.5) {};
+\node[bigger box] (e) at (2.5, -4.5) {};
+\node[big box] (h-1) at (5,-4.5) {};
+\node[big box] (o) at (7.5,-4.5) {};
+\node[above] at (i.north) {$i_1$};
+\node[above] at (i2.north) {$i_2$};
+\node[above] at (e.north) {$e$};
+\node[above] at (h-1.north) {$h_1$};
+\node[above] at (o.north) {$f_5$};
+\foreach \x in {1,...,4} {
+	\node[small box] (f-\x) at (0,-\x + 1) {$l_{\x}$};
+	\node[small box] (e-\x) at (2.5,-\x) {$e_{\x}$};
+	\path[normal arrow] (f-\x) -- node[above,sloped] {$W_e$} (e-\x);
+	\node[small box] (f-\x) at (0,-\x - 5) {$t_{\x}$};
+	\node[small box] (e-\x) at (2.5,-\x - 4) {$t_{\x}$};
+	\path[normal arrow] (f-\x) -- node[above,sloped] {id} (e-\x);
+}
+\foreach \x in {1, 2} {
+	\node[cnode=white] (a-\x) at (5,-\x-2) {$a_{\x}$};
+	\node[cnode=white] (v-\x) at (7.5,-\x-2) {$v_{\x}$};
+}
+\node[] (a-3) at (5,-5) {\vdots};
+\node[cnode=white] (a-4) at (5,-6) {$a_{h}$};
+\node[] (v-3) at (7.5,-5) {\vdots};
+\node[cnode=white] (v-4) at (7.5,-6) {$v_{V}$};
+\path[normal arrow] (e) -- node[above] {$W_h$} (h-1);
+\path[normal arrow] (h-1) -- node[above] {$W_o$} (o);
+\end{tikzpicture}

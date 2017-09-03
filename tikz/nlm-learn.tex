@@ -2,8 +2,8 @@
 [   cnode/.style={draw=black,fill=#1,minimum width=3mm,circle},
     normal arrow/.style={draw,-triangle 45,very thick},
     dashed arrow/.style={draw,-triangle 45,very thick,dashed},
-    small box/.style={draw, minimum height=6mm, minimum width=7mm, rectangle},
-    scale = 0.8
+    small box/.style={draw, minimum height=7mm, minimum width=7mm, rectangle},
+    small cross/.style={draw, minimum height=7mm, minimum width=7mm, cross out}
 ]
 
 	\draw (5,0) -- (5,-8);
@@ -16,6 +16,7 @@
 	\node[cnode=white] (s-3) at (2,-3 + 1) {NN};
 	\node[small box] (g-3) at (4,-3 + 1) {$w_{3}$};
 	\node[small box] (f-3) at (0,-3 + 1) {};
+	\node[small cross] (fc-3) at (0,-3 + 1) {};
 	\path[dashed arrow] (s-3) -- (g-3);
 \foreach \x in {1,2,4,5} {
 	\node[small box] (f-\x) at (0,-\x + 1) {$w_{\x}$};
@@ -29,6 +30,7 @@
 	\node[cnode=white] (r-4) at (8,-4 + 1) {NN};
 	\node[small box] (b-4) at (10,-4 + 1) {$w_{4}$};
 	\node[small box] (n-4) at (6,-4 + 1) {};
+	\node[small cross] (nc-4) at (6,-4 + 1) {};
 	\path[dashed arrow] (r-4) -- (b-4);
 \foreach \x in {2,3,5,6} {
 	\node[small box] (n-\x) at (6,-\x + 1) {$w_{\x}$};
@@ -43,6 +45,7 @@
 	\node[cnode=white] (q-4) at (14,-5 + 1) {NN};
 	\node[small box] (w-5) at (16,-5 + 1) {$w_{5}$};
 	\node[small box] (e-4) at (12,-5 + 1) {};
+	\node[small cross] (ec-4) at (12,-5 + 1) {};
 	\path[dashed arrow] (q-4) -- (w-5);
 \foreach \x in {3,4,6,7} {
 	\node[small box] (e-\x) at (12,-\x + 1) {$w_{\x}$};

@@ -4,9 +4,9 @@
     big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
     small box/.style={draw, minimum height=7mm, rectangle}
 ]
-\node at (0,0) {input};
-\node at (2,0) {hidden};
-\node at (4,0) {output};
+\node[anchor=base] at (0,0) {input};
+\node[anchor=base] at (2,0) {hidden};
+\node[anchor=base] at (4,0) {output};
 \foreach \x in {1, 2} {
 	\node[cnode=white] (v-\x) at (4,-1-\x) {};
 }

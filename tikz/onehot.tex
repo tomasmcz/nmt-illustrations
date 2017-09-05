@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=3mm,circle},
+    normal arrow/.style={draw,-triangle 45,very thick},
+    big box/.style={draw, minimum width=15em, minimum height=3em, rectangle},
+    small box/.style={draw, minimum height=7mm, rectangle}
+]
+\node[] (v) at (1,0) {$\cdots$};
+\node[cnode=white] (p1) at (2,0) {0};
+\node[cnode=white] (p2) at (3,0) {0};
+\node[cnode=white] (p3) at (4,0) {0};
+\node[cnode=green!50] (p4) at (5,0) {1};
+\node[cnode=white] (p5) at (6,0) {0};
+\node[] (v2) at (7,0) {$\cdots$};
+\node[big box, fit={(v) (v2)}] {};
+
+	\node[rotate=90, anchor=east] (l1) at (2, -1.3) {ovšem};
+	\node[rotate=90, anchor=east] (l2) at (3, -1.3) {protože};
+	\node[rotate=90, anchor=east] (l3) at (4, -1.3) {rovněž};
+	\node[rotate=90, anchor=east] (l4) at (5, -1.3) {\color{green}tohoto};
+	\node[rotate=90, anchor=east] (l5) at (6, -1.3) {informace};
+
+	\path[normal arrow, color=gray] (l1) -- (p1);
+	\path[normal arrow, color=gray] (l2) -- (p2);
+	\path[normal arrow, color=gray] (l3) -- (p3);
+	\path[normal arrow, color=green] (l4) -- (p4);
+	\path[normal arrow, color=gray] (l5) -- (p5);
+
+\end{tikzpicture}

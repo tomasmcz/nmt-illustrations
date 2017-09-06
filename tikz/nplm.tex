@@ -15,7 +15,7 @@
 \foreach \x in {1,...,4} {
 	\node[small box] (f-\x) at (0,-\x) {$f_{\x}$};
 	\node[small box] (e-\x) at (2.5,-\x) {$e_{\x}$};
-	\path[normal arrow] (f-\x) -- node[above,sloped] {$W_e$} (e-\x);
+	\path[normal arrow] (f-\x) -- node[above,xshift=-.5em] {$W_e$} (e-\x);
 }
 \foreach \x in {1, 2} {
 	\node[cnode=white] (a-\x) at (5,-\x) {$a_{\x}$};
@@ -25,6 +25,6 @@
 \node[cnode=white] (a-4) at (5,-4) {$a_{h}$};
 \node[] (v-3) at (7.5,-3) {\vdots};
 \node[cnode=white] (v-4) at (7.5,-4) {$v_{V}$};
-\path[normal arrow] (e) -- node[above] {$W_h$}  (h-1);
-\path[normal arrow] (h-1) -- node[above] {$W_o$} (o);
+\path[normal arrow] (e) -- node[above,xshift=-.6em] {$W_h$}  (h-1);
+\path[normal arrow] (h-1) -- node[above,xshift=-.6em] {$W_o$} (o);
 \end{tikzpicture}

@@ -14,11 +14,11 @@
 	\node[] (p3) at (14.5,1) {$t_3$};
 
 	\node[cnode=white] (s-3) at (2,-3 + 1) {NN};
-	\node[small box] (g-3) at (4,-5 + 1) {$w_{5}$};
-	\node[small box] (f-3) at (0,-5 + 1) {};
-	\node[small cross] (fc-3) at (0,-5 + 1) {};
+	\node[small box] (g-3) at (4,-3 + 1) {$w_{3}$};
+	\node[small box] (f-3) at (0,-3 + 1) {};
+	\node[small cross] (fc-3) at (0,-3 + 1) {};
 	\path[dashed arrow] (s-3) -- (g-3);
-\foreach \x in {1,2,3,4} {
+\foreach \x in {1,2,4,5} {
 	\node[small box] (f-\x) at (0,-\x + 1) {$w_{\x}$};
 	\path[normal arrow] (f-\x) -- (s-3);
 }
@@ -28,11 +28,11 @@
 	\node[] (f-9) at (0,-9 + 1) {$\vdots$};
 
 	\node[cnode=white] (r-4) at (8,-4 + 1) {NN};
-	\node[small box] (b-4) at (10,-6 + 1) {$w_{6}$};
-	\node[small box] (n-4) at (6,-6 + 1) {};
-	\node[small cross] (nc-4) at (6,-6 + 1) {};
+	\node[small box] (b-4) at (10,-4 + 1) {$w_{4}$};
+	\node[small box] (n-4) at (6,-4 + 1) {};
+	\node[small cross] (nc-4) at (6,-4 + 1) {};
 	\path[dashed arrow] (r-4) -- (b-4);
-\foreach \x in {2,3,4,5} {
+\foreach \x in {2,3,5,6} {
 	\node[small box] (n-\x) at (6,-\x + 1) {$w_{\x}$};
 	\path[normal arrow] (n-\x) -- (r-4);
 }
@@ -43,11 +43,11 @@
 	\node[] (b-9) at (6,-9 + 1) {$\vdots$};
 
 	\node[cnode=white] (q-4) at (14,-5 + 1) {NN};
-	\node[small box] (w-5) at (16,-7 + 1) {$w_{7}$};
-	\node[small box] (e-4) at (12,-7 + 1) {};
-	\node[small cross] (ec-4) at (12,-7 + 1) {};
+	\node[small box] (w-5) at (16,-5 + 1) {$w_{5}$};
+	\node[small box] (e-4) at (12,-5 + 1) {};
+	\node[small cross] (ec-4) at (12,-5 + 1) {};
 	\path[dashed arrow] (q-4) -- (w-5);
-\foreach \x in {3,4,5,6} {
+\foreach \x in {3,4,6,7} {
 	\node[small box] (e-\x) at (12,-\x + 1) {$w_{\x}$};
 	\path[normal arrow] (e-\x) -- (q-4);
 }

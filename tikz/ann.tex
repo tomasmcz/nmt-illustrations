@@ -4,12 +4,13 @@
     big box/.style={draw, minimum width=10mm, minimum height=12em, rectangle},
     small box/.style={draw, minimum height=7mm, rectangle}
 ]
-\node[anchor=base] at (0,0) {input};
-\node[anchor=base] at (2,0) {hidden};
-\node[anchor=base] at (4,0) {output};
-\foreach \x in {1, 2} {
-	\node[cnode=white] (v-\x) at (4,-1-\x) {};
-}
+\node[anchor=base] at (0,0) {\ifdefined\tmCZ vstupní \else input \fi};
+\node[anchor=base] at (2,0) {\ifdefined\tmCZ skrytá \else hidden \fi};
+\node[anchor=base] at (4,0) {\ifdefined\tmCZ výstupní \else output \fi};
+
+\node[cnode=white] (v-1) at (4,-1.75) {};
+\node[cnode=white] (v-2) at (4,-3.25) {};
+
 \foreach \x in {1,...,4} {
 	\node[cnode=white] (a-\x) at (2,-\x) {};
 \foreach \y in {1,2} {

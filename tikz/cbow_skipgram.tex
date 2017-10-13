@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+[   cnode/.style={draw=black,fill=#1,minimum width=10mm,circle},
+    normal arrow/.style={draw,-triangle 45,very thick},
+    dashed arrow/.style={draw,-triangle 45,very thick,dashed},
+    small box/.style={draw, minimum height=7mm, minimum width=7mm, rectangle},
+    small cross/.style={draw, minimum height=7mm, minimum width=7mm, cross out}
+]
+
+	\node[] (p1) at (2,1) {CBOW};
+	\node[] (p2) at (10,1) {Skip-gram};
+
+	\node[cnode=white] (s-3) at (2,-3 + 1) {$\sum$};
+	\node[small box] (g-3) at (4,-3 + 1) {$w_{3}$};
+	\node[small box] (f-3) at (0,-3 + 1) {};
+	\node[small cross] (f-3c) at (0,-3 + 1) {};
+	\path[dashed arrow] (s-3) -- (g-3);
+\foreach \x in {1,2,4,5} {
+	\node[small box] (f-\x) at (0,-\x + 1) {$w_{\x}$};
+	\path[normal arrow] (f-\x) -- (s-3);
+}
+	\node[] (f-6) at (0,-6 + 1) {$\vdots$};
+
+	\node[cnode=white] (r-3) at (10,-3 + 1) {};
+	\node[small box] (b-3) at (8,-3 + 1) {$w_{4}$};
+	\path[normal arrow] (b-3) -- (r-3);
+\foreach \x in {1,2,4,5} {
+	\node[small box] (n-\x) at (12,-\x + 1) {$w_{\x}$};
+	\node[small box] (m-\x) at (8,-\x + 1) {};
+	\node[small cross] (mc-\x) at (8,-\x + 1) {};
+	\path[dashed arrow] (r-3) -- (n-\x);
+}
+	\node[] (b-6) at (8,-6 + 1) {$\vdots$};
+
+\end{tikzpicture}
